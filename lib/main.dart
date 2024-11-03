@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami/Screens/splash.dart';
+import 'package:islami/tabs/quran/sura_contant.dart';
 
 import 'Screens/home.dart';
 import 'models/app_theme.dart';
@@ -21,6 +22,7 @@ class Islami extends StatelessWidget {
       routes: {
         Splash.routeName: (_) => const Splash(),
         HomeScreen.routeName: (_) => const HomeScreen(),
+        SuraContant.routeName: (_) => SuraContant(),
       },
     );
   }

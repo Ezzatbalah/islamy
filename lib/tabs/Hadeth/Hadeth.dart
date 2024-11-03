@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class HadethTab extends StatelessWidget {
@@ -5,7 +7,7 @@ class HadethTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text("Hadeth"),
     );
   }
