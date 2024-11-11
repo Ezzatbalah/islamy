@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:islami/tabs/Hadeth/Hadeth.dart';
 import 'package:islami/tabs/quran/quran.dart';
 import 'package:islami/tabs/radio/radio.dart';
-import 'package:islami/tabs/settings/settigns.dart';
+import 'package:islami/tabs/settings/settigns_tabs.dart';
+import 'package:islami/tabs/settings/setting_provider.dart';
+import 'package:provider/provider.dart';
 import '../tabs/sebha/sebha.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -17,19 +19,20 @@ class HomeScreen extends StatefulWidget {
 int selectedTap = 0;
 List<Widget> tabs = [
   QuranTab(),
-  const HadethTab(),
-  const SebhaTab(),
-  const RadioTab(),
-  const SettingTab(),
+  HadethTab(),
+  SebhaTab(),
+  RadioTab(),
+  SettingTab(),
 ];
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    SettingProvider settingProvider = Provider.of<SettingProvider>(context);
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage("assets/images/3x/bg3.png"),
+          image: AssetImage(settingProvider.backgroundImageName),
           fit: BoxFit.fill,
         ),
       ),

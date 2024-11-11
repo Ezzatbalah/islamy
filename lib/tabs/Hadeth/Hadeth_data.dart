@@ -1,31 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
 import 'package:islami/models/app_theme.dart';
-import 'package:islami/tabs/quran/Sura_contan_Arg.dart';
-import 'package:islami/tabs/settings/setting_provider.dart';
-import 'package:islami/widgets/loading_indicator.dart';
 import 'package:provider/provider.dart';
 
+import '../settings/setting_provider.dart';
+import 'Hadeth_con.dart';
+
 // ignore: must_be_immutable
-class SuraContant extends StatefulWidget {
-  static String routeName = '/sura-contant';
+class HadethData extends StatelessWidget {
+  static String routeName = '/hadeth-contant';
 
-  @override
-  State<SuraContant> createState() => _SuraContantState();
-}
-
-class _SuraContantState extends State<SuraContant> {
-  List<String> ayat = [];
-
-  late SuraContantArgs args;
   @override
   @override
   Widget build(BuildContext context) {
-    args = ModalRoute.of(context)!.settings.arguments as SuraContantArgs;
+    Hadeth hadeth = ModalRoute.of(context)!.settings.arguments as Hadeth;
     SettingProvider settingProvider = Provider.of<SettingProvider>(context);
-    if (ayat.isEmpty) {
-      loadSuraFile();
-    }
     return Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -36,7 +25,7 @@ class _SuraContantState extends State<SuraContant> {
         ),
         child: Scaffold(
           appBar: AppBar(
-            title: Text(args.surName),
+            title: Text(hadeth.titel),
           ),
           body: Padding(
             padding:
@@ -58,28 +47,19 @@ class _SuraContantState extends State<SuraContant> {
                     thickness: 1,
                   ),
                   Expanded(
-                    child: ayat.isEmpty
-                        ? LoadingIndicator()
-                        : ListView.builder(
-                            itemCount: ayat.length,
-                            itemBuilder: (_, index) => Text(
-                              ayat[index],
-                              textAlign: TextAlign.center,
-                              style: Theme.of(context).textTheme.titleLarge,
-                            ),
-                          ),
+                    child: ListView.builder(
+                      itemCount: hadeth.contant.length,
+                      itemBuilder: (_, index) => Text(
+                        hadeth.contant[index],
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
+                    ),
                   )
                 ],
               ),
             ),
           ),
         ));
-  }
-
-  Future<void> loadSuraFile() async {
-    String contant =
-        await rootBundle.loadString('assets/text/${args.index + 1}.txt');
-    ayat = contant.split('\r\n');
-    setState(() {});
   }
 }

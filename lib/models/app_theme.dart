@@ -12,65 +12,78 @@ class Apptheme {
   static const Color darkAccent = Color(0xffFACC1D);
 
   static ThemeData lightTheme = ThemeData(
-      scaffoldBackgroundColor: transparent,
-      primaryColor: primaryColor,
-      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: primaryColor,
-        selectedItemColor: black,
-        unselectedItemColor: white,
+    scaffoldBackgroundColor: transparent,
+    primaryColor: primaryColor,
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      type: BottomNavigationBarType.fixed,
+      backgroundColor: primaryColor,
+      selectedItemColor: black,
+      unselectedItemColor: white,
+    ),
+    appBarTheme: const AppBarTheme(
+      backgroundColor: transparent,
+      foregroundColor: black,
+      centerTitle: true,
+      titleTextStyle: TextStyle(
+        color: black,
+        fontSize: 30,
+        fontWeight: FontWeight.w700,
       ),
-      appBarTheme: const AppBarTheme(
-        backgroundColor: transparent,
-        centerTitle: true,
-        titleTextStyle: TextStyle(
+    ),
+    dividerTheme: const DividerThemeData(
+      thickness: 3,
+      color: primaryColor,
+    ),
+    textTheme: const TextTheme(
+        headlineSmall: TextStyle(
+          fontSize: 25,
+          fontWeight: FontWeight.w400,
           color: black,
-          fontSize: 30,
-          fontWeight: FontWeight.w700,
         ),
-      ),
-      dividerTheme: const DividerThemeData(
-        thickness: 3,
-        color: primaryColor,
-      ),
-      textTheme: const TextTheme(
-          headlineSmall: TextStyle(
-            fontSize: 25,
-            fontWeight: FontWeight.w400,
-            color: black,
-          ),
-          titleLarge: TextStyle(
-              fontSize: 20, fontWeight: FontWeight.w400, color: black)),
-      dividerColor: primaryColor);
+        titleLarge:
+            TextStyle(fontSize: 20, fontWeight: FontWeight.w400, color: black)),
+    dividerColor: primaryColor,
+    progressIndicatorTheme:
+        const ProgressIndicatorThemeData(color: primaryColor),
+    iconTheme: const IconThemeData(
+      color: primaryColor,
+    ),
+  );
   static ThemeData darkTheme = ThemeData(
-      scaffoldBackgroundColor: transparent,
-      primaryColor: darkPrimary,
-      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: darkPrimary,
-        selectedItemColor: black,
-        unselectedItemColor: white,
+    scaffoldBackgroundColor: transparent,
+    primaryColor: darkPrimary,
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      type: BottomNavigationBarType.fixed,
+      backgroundColor: darkPrimary,
+      selectedItemColor: darkAccent,
+      unselectedItemColor: white,
+    ),
+    appBarTheme: const AppBarTheme(
+      backgroundColor: transparent,
+      foregroundColor: white,
+      centerTitle: true,
+      titleTextStyle: TextStyle(
+        color: white,
+        fontSize: 30,
+        fontWeight: FontWeight.w700,
       ),
-      appBarTheme: const AppBarTheme(
-        backgroundColor: transparent,
-        centerTitle: true,
-        titleTextStyle: TextStyle(
+    ),
+    dividerTheme: const DividerThemeData(
+      thickness: 3,
+      color: darkAccent,
+    ),
+    textTheme: const TextTheme(
+        headlineSmall: TextStyle(
+          fontSize: 25,
+          fontWeight: FontWeight.w400,
           color: white,
-          fontSize: 30,
-          fontWeight: FontWeight.w700,
         ),
-      ),
-      dividerTheme: const DividerThemeData(
-        thickness: 3,
-        color: darkPrimary,
-      ),
-      textTheme: const TextTheme(
-          headlineSmall: TextStyle(
-            fontSize: 25,
-            fontWeight: FontWeight.w400,
-            color: white,
-          ),
-          titleLarge: TextStyle(
-              fontSize: 20, fontWeight: FontWeight.w400, color: white)),
-      dividerColor: darkAccent);
+        titleLarge: TextStyle(
+            fontSize: 20, fontWeight: FontWeight.w400, color: darkAccent)),
+    dividerColor: darkAccent,
+    progressIndicatorTheme: const ProgressIndicatorThemeData(color: darkAccent),
+    iconTheme: const IconThemeData(
+      color: darkPrimary,
+    ),
+  );
 }
