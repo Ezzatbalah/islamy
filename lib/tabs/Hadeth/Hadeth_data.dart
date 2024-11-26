@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 
 import 'package:islami/models/app_theme.dart';
@@ -9,6 +10,8 @@ import 'Hadeth_con.dart';
 // ignore: must_be_immutable
 class HadethData extends StatelessWidget {
   static String routeName = '/hadeth-contant';
+
+  const HadethData({super.key});
 
   @override
   @override

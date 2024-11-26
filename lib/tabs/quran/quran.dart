@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami/tabs/quran/Sura_contan_Arg.dart';
 import 'package:islami/tabs/quran/sura_contant.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 // ignore: must_be_immutable
 class QuranTab extends StatelessWidget {
@@ -258,7 +259,7 @@ class QuranTab extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 30),
                 child: Text(
-                  "عدد  الآيات",
+                  AppLocalizations.of(context)!.number,
                   style: Theme.of(context).textTheme.headlineSmall,
                 ),
               ),
@@ -268,7 +269,7 @@ class QuranTab extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(right: 30),
                 child: Text(
-                  "اسم السورة",
+                  AppLocalizations.of(context)!.name,
                   style: Theme.of(context).textTheme.headlineSmall,
                 ),
               ),

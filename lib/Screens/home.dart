@@ -6,6 +6,7 @@ import 'package:islami/tabs/settings/settigns_tabs.dart';
 import 'package:islami/tabs/settings/setting_provider.dart';
 import 'package:provider/provider.dart';
 import '../tabs/sebha/sebha.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "/home ";
@@ -20,8 +21,8 @@ int selectedTap = 0;
 List<Widget> tabs = [
   QuranTab(),
   HadethTab(),
-  SebhaTab(),
-  RadioTab(),
+  const SebhaTab(),
+  const RadioTab(),
   SettingTab(),
 ];
 
@@ -38,10 +39,10 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       child: Scaffold(
         appBar: AppBar(
-          title: const Padding(
+          title: Padding(
             padding: EdgeInsets.only(bottom: 36, right: 18),
             child: Text(
-              'إسلامي',
+              AppLocalizations.of(context)!.islami,
             ),
           ),
         ),
@@ -52,33 +53,34 @@ class _HomeScreenState extends State<HomeScreen> {
             selectedTap = index;
             setState(() {});
           },
-          items: const [
+          items: [
             BottomNavigationBarItem(
               icon: ImageIcon(
                 AssetImage("assets/images/3x/quran@3x.png"),
               ),
-              label: "quran",
+              label: AppLocalizations.of(context)!.quran,
             ),
             BottomNavigationBarItem(
               icon: ImageIcon(
                 AssetImage("assets/images/3x/quran-quran-svgrepo-com@3x.png"),
               ),
-              label: "Hadeth",
+              label: AppLocalizations.of(context)!.hadeth,
             ),
             BottomNavigationBarItem(
               icon: ImageIcon(
                 AssetImage("assets/images/3x/sebha@3x.png"),
               ),
-              label: "sebha",
+              label: AppLocalizations.of(context)!.sebha,
             ),
             BottomNavigationBarItem(
               icon: ImageIcon(
                 AssetImage("assets/images/3x/radio@3x.png"),
               ),
-              label: "radio",
+              label: AppLocalizations.of(context)!.radio,
             ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.settings_outlined), label: 'settings')
+                icon: Icon(Icons.settings_outlined),
+                label: AppLocalizations.of(context)!.settings),
           ],
         ),
       ),

@@ -3,11 +3,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/widgets/loading_indicator.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'Hadeth_con.dart';
 import 'Hadeth_data.dart';
 
 class HadethTab extends StatefulWidget {
+  const HadethTab({super.key});
+
   @override
   State<HadethTab> createState() => _HadethTabState();
 }
@@ -28,7 +30,7 @@ class _HadethTabState extends State<HadethTab> {
         ),
         const Divider(),
         Text(
-          "الأحاديث",
+          AppLocalizations.of(context)!.hadeth,
           style: Theme.of(context).textTheme.headlineSmall,
         ),
         const Divider(),

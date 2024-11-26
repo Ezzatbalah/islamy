@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:islami/models/app_theme.dart';
 import 'package:islami/tabs/settings/language.dart';
 import 'package:provider/provider.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'setting_provider.dart';
 
 class SettingTab extends StatefulWidget {
+  const SettingTab({super.key});
+
   @override
   State<SettingTab> createState() => _SettingTabState();
 }
@@ -41,13 +43,13 @@ class _SettingTabState extends State<SettingTab> {
             ],
           ),
           const SizedBox(
-            height: 20,
+            height: 10,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "Language",
+                AppLocalizations.of(context)!.language,
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge
@@ -55,7 +57,8 @@ class _SettingTabState extends State<SettingTab> {
               ),
               DropdownButtonHideUnderline(
                 child: DropdownButton<Language>(
-                  value: language.first,
+                  value: language.firstWhere((language) =>
+                      language.code == settingProvider.languageCode),
                   items: language
                       .map(
                         (language) => DropdownMenuItem(
@@ -69,7 +72,7 @@ class _SettingTabState extends State<SettingTab> {
                       .toList(),
                   onChanged: (selectedLanguage) {
                     if (selectedLanguage != null) {
-                      print(selectedLanguage.code);
+                      settingProvider.changeLanguage(selectedLanguage.code);
                     }
                   },
                   borderRadius: BorderRadius.circular(20),

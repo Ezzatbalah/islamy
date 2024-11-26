@@ -10,6 +10,8 @@ import 'package:provider/provider.dart';
 class SuraContant extends StatefulWidget {
   static String routeName = '/sura-contant';
 
+  const SuraContant({super.key});
+
   @override
   State<SuraContant> createState() => _SuraContantState();
 }
