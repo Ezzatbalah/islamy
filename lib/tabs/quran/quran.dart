@@ -255,6 +255,7 @@ class QuranTab extends StatelessWidget {
           ),
           const Divider(),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 30),
@@ -263,8 +264,8 @@ class QuranTab extends StatelessWidget {
                   style: Theme.of(context).textTheme.headlineSmall,
                 ),
               ),
-              const Spacer(
-                flex: 1,
+              SizedBox(
+                width: 35,
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 30),
@@ -285,6 +286,7 @@ class QuranTab extends StatelessWidget {
                     itemCount: suraNumber.length,
                     itemBuilder: (_, index) => Text(
                       suraNumber[index],
+                      textAlign: TextAlign.center,
                       style: Theme.of(context).textTheme.headlineSmall,
                     ),
                     separatorBuilder: (_, __) => const SizedBox(height: 4),
@@ -304,6 +306,7 @@ class QuranTab extends StatelessWidget {
                       },
                       child: Text(
                         suraName[index],
+                        textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.headlineSmall,
                       ),
                     ),

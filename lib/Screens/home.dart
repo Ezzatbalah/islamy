@@ -21,7 +21,7 @@ int selectedTap = 0;
 List<Widget> tabs = [
   QuranTab(),
   HadethTab(),
-  const SebhaTab(),
+  SebhaTab(),
   const RadioTab(),
   SettingTab(),
 ];

@@ -11,7 +11,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 void main() {
   runApp(
     ChangeNotifierProvider(
-      create: (_) => SettingProvider(),
+      create: (_) => SettingProvider()..loadPreferences(),
       child: const Islami(),
     ),
   );
@@ -39,6 +39,14 @@ class Islami extends StatelessWidget {
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       locale: Locale(settingProvider.languageCode),
+      builder: (context, child) {
+        return Directionality(
+          textDirection: settingProvider.languageCode == 'ar'
+              ? TextDirection.rtl
+              : TextDirection.ltr,
+          child: child!,
+        );
+      },
     );
   }
 }

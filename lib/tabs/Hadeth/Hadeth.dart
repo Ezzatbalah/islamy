@@ -15,11 +15,11 @@ class HadethTab extends StatefulWidget {
 }
 
 class _HadethTabState extends State<HadethTab> {
-  List<Hadeth> HadethNumber = [];
+  List<Hadeth> hadethNumber = [];
 
   @override
   Widget build(BuildContext context) {
-    if (HadethNumber.isEmpty) {
+    if (hadethNumber.isEmpty) {
       loadHadeth();
     }
     return Column(
@@ -35,20 +35,20 @@ class _HadethTabState extends State<HadethTab> {
         ),
         const Divider(),
         Expanded(
-          child: HadethNumber.isEmpty
+          child: hadethNumber.isEmpty
               ? LoadingIndicator()
               : ListView.separated(
                   itemBuilder: (_, index) => GestureDetector(
                     onTap: () => Navigator.of(context).pushNamed(
                         HadethData.routeName,
-                        arguments: HadethNumber[index]),
+                        arguments: hadethNumber[index]),
                     child: Text(
-                      HadethNumber[index].titel,
+                      hadethNumber[index].titel,
                       style: Theme.of(context).textTheme.headlineSmall,
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  itemCount: HadethNumber.length,
+                  itemCount: hadethNumber.length,
                   separatorBuilder: (_, __) => const SizedBox(height: 4),
                 ),
         )
@@ -60,7 +60,7 @@ class _HadethTabState extends State<HadethTab> {
     String hadethContant =
         await rootBundle.loadString('assets/text/ahadeth.txt');
     List<String> ahatethString = hadethContant.split("#");
-    HadethNumber = ahatethString.map((hadethString) {
+    hadethNumber = ahatethString.map((hadethString) {
       List<String> hadethLines = hadethString.trim().split('\n');
       String titel = hadethLines.first;
       hadethLines.removeAt(0);

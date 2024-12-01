@@ -1,11 +1,23 @@
 {
+    
     "islami":"إسلامي",
+    "@islami": {},
     "quran":"القران",
+    "@quran": {},
     "hadeth":"احاديث",
+    "@hadeth": {},
     "sebha":"سبحة",
+    "@sebha": {},
     "radio":"راديو",
+    "@radio": {},
     "settings":"الاعدادت",
+    "@settings": {},
      "number":"عدد الايات",
+    "@number": {},
     "name":"اسم السورة",
-    "language":"اللغة"
+    "@name": {},
+    "language":"اللغة",
+    "@language": {},
+    "number_of_praises":"عدد التسبيحات",
+    "@number_of_praises": {}
 }

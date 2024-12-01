@@ -1,12 +1,23 @@
 {
     "islami": "Islami",
+    "@islami": {},
     "quran": "Quran",
+    "@quran": {},
     "hadeth": "Hadeth",
+    "@hadeth": {},
     "sebha": "Sebha",
+    "@sebha": {},
     "radio": "Radio",
+    "@radio": {},
     "settings": "Settings",
+    "@settings": {},
     "number":"Ayat number",
+    "@number": {},
     "name":"sura name",
-    "language":"Language"
+    "@name": {},
+    "language":"Language",
+    "@language": {},
+    "number_of_praises":"Number of praises",
+    "@number_of_praises": {}
 
 }

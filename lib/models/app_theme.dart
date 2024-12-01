@@ -35,6 +35,8 @@ class Apptheme {
       color: primaryColor,
     ),
     textTheme: const TextTheme(
+        headlineMedium:
+            TextStyle(fontSize: 25, color: white, fontWeight: FontWeight.w400),
         headlineSmall: TextStyle(
           fontSize: 25,
           fontWeight: FontWeight.w400,
@@ -73,6 +75,8 @@ class Apptheme {
       color: darkAccent,
     ),
     textTheme: const TextTheme(
+        headlineMedium:
+            TextStyle(fontSize: 25, color: black, fontWeight: FontWeight.w400),
         headlineSmall: TextStyle(
           fontSize: 25,
           fontWeight: FontWeight.w400,
